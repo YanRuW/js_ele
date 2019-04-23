@@ -38,9 +38,8 @@ class App extends Component {
 
         });
         if(result.retCode==0){
-            if(result.data == true){
-                localStorage.setItem("contract", true);
-            }
+                this.props.handleContract(result.data)
+                // localStorage.setItem("contract", true);
         }
     }
     //获取用户信息
@@ -68,6 +67,10 @@ const mapDispatchToProps = (dispatch)=>({
     },
     handleTokenInfo(token){
         dispatch(action.userInfo.accessTokenAction(token));
+    },
+    handleContract(contract){
+        dispatch(action.userInfo.contractAction(contract));
     }
+
 })
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App)) ;

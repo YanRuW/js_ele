@@ -15,7 +15,7 @@ router.get("/task/statistic", (request, response) => {
                 date:"2019-04-23",
                 startTime:"15:10:00",
                 endTime:"15:40:00",
-                state:"2"
+                state:"0"
             },
             {
                 id:12,
@@ -76,13 +76,15 @@ router.get("/task/statistic", (request, response) => {
         ]
     });
 });
+let contract = false;
 router.get("/contract/signed", (request, response) => {
     response.send({
         retCode:0,
-        data:false
+        data:contract
     })
 });
 router.post("/contract/add", (request, response) => {
+    contract = true;
     // console.log(request.body)
     response.send({
         retCode:0,
@@ -90,6 +92,7 @@ router.post("/contract/add", (request, response) => {
     })
 });
 router.post("/contract/remove", (request, response) => {
+    contract=false;
     response.send({
         retCode:0,
         data:true

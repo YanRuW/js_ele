@@ -1,7 +1,8 @@
 import * as TYPE from "../action-types";
 const defaultState = {
     userId:"",
-    token:""
+    token:"",
+    contract:false
 }
 export default (state = defaultState,action)=>{
     switch(action.type){
@@ -11,6 +12,9 @@ export default (state = defaultState,action)=>{
         case TYPE.TOKEN: let tokenState = {...state};
         tokenState.token = action.value;
         return tokenState;
+        case TYPE.CONTRACT: let contractState = {...state};
+        contractState.contract = action.value;
+        return contractState;
     }
   return state;
 }

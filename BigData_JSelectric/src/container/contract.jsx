@@ -5,14 +5,15 @@ import { Modal, Checkbox } from 'antd-mobile';
 import Nav from "../component/navBar";
 import { rest, axios, root } from "../api";
 import { connect } from "react-redux";
+import action from "../store/action";
 const alert = Modal.alert;
 class Contract extends Component {
     constructor() {
         super();
         this.state = {
             checked: false,
-            proviceCode: "1",  //默认省编码
-            cityCode: "1",  //默认市编码
+            proviceCode: "320000000000",  //默认省编码
+            cityCode: "320100000000",  //默认市编码
             elecNumber: "",  //缴费账号
             cityArr: [],
             msg: {
@@ -30,8 +31,8 @@ class Contract extends Component {
             <Nav text="电力需求" history={this.props.history} closeWebView="1" />
             <div className="banner" style={{ background: `url(${rest}/assets/images/banner.png) 100% center no-repeat`, backgroundSize: "100% 100%" }}></div>
             <div className="contract">
-                <div className="eleCont" onClick={this.showModal("modal1")}>电力削峰是指 ... ...</div>
-                <div className="eleCont" onClick={this.showModal("modal2")}>签约后如何执行 ... ...</div>
+                <div className="eleCont" onClick={this.showModal("modal1")}>电力削峰是指......</div>
+                <div className="eleCont" onClick={this.showModal("modal2")}>签约后如何执行......</div>
                 <div className="form">
                     <div className="align-center title">注册签约</div>
                     <div className="form-con">
@@ -72,8 +73,7 @@ class Contract extends Component {
                     footer={[{ text: '确定', onPress: () => { this.onClose('modal1')(); } }]}
                 >
                     <div style={{ height: 300, overflow: 'scroll' }}>
-                        由于用电负荷是不均匀的。在用电高峰时，电网往往超负荷。此时需要投入在正常运行以外的发电机组以满足需求。这些发电机组称调峰机组。因为他用于调节用电的高峰，所以称调峰机组。调峰机组的要求是启动和停止方便快捷，并网时的同步调整容易。一般调峰机组有燃气轮机机组和抽水蓄能机组等等。
-                电能不能储存，电能的发出和使用是同步的，所以需要多少电量，发电部门就必须同步发出多少电量。电力系统中的用电负荷是经常发生变化的，为了维持用功功率平衡，保持系统频率稳定，需要发电部门相应改变发电机的出力以适应用电负荷的变化，这就叫做调峰。
+                        胖死啦
                     </div>
                 </Modal>
                 <Modal
@@ -85,8 +85,7 @@ class Contract extends Component {
                     footer={[{ text: '确定', onPress: () => { this.onClose('modal2')(); } }]}
                 >
                     <div style={{ height: 300, overflow: 'scroll' }}>
-                        由于用电负荷是不均匀的。在用电高峰时，电网往往超负荷。此时需要投入在正常运行以外的发电机组以满足需求。这些发电机组称调峰机组。因为他用于调节用电的高峰，所以称调峰机组。调峰机组的要求是启动和停止方便快捷，并网时的同步调整容易。一般调峰机组有燃气轮机机组和抽水蓄能机组等等。
-                电能不能储存，电能的发出和使用是同步的，所以需要多少电量，发电部门就必须同步发出多少电量。电力系统中的用电负荷是经常发生变化的，为了维持用功功率平衡，保持系统频率稳定，需要发电部门相应改变发电机的出力以适应用电负荷的变化，这就叫做调峰。
+                       开始减肥
                     </div>
                 </Modal>
             </div>
@@ -136,10 +135,9 @@ class Contract extends Component {
             }
         });
         if (result.retCode == 0) {
-            localStorage.setItem("contract", true);
             alert(<div style={{ width: ".81rem", height: ".81rem", margin: "0.1rem auto 0", background: `url(${rest}/assets/images/success.png) 100% center no-repeat`, backgroundSize: "100% 100%" }}></div>,
                 <div style={{ color: "#333", fontSize: ".18rem", lineHeight: "3" }}>签约成功</div>, [
-                    { text: '查看活动进展', onPress: () => this.props.history.push("/contracted") },
+                    { text: '查看活动进展', onPress: () => {this.props.handlePropsContract(true);this.props.history.push("/contracted")} },
                 ])
         } else {
             alert('签约失败', <div>{msg[result.retCode]}</div>, [
@@ -162,4 +160,10 @@ const mapStateToProps = (state) => ({
     userId: state.userInfo.userId,
     token: state.userInfo.token
 })
-export default connect(mapStateToProps)(Contract)
+const mapDispatchToProps = (dispatch)=>({
+    handlePropsContract(contract){
+        dispatch(action.userInfo.contractAction(contract));
+    }
+
+})
+export default connect(mapStateToProps,mapDispatchToProps)(Contract)

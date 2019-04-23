@@ -17,7 +17,9 @@ export default class ElecNumber extends Component{
             <h2 className="align-center">活动详情</h2>
            
         </div> */}
-        <div className="contract">今天风好大，今天风好大，今天风好大</div>
+        <div className="contract">
+            今天风好大，今天风好大，今天风好大，今天风好大，今天风好大，今天风好大，今天风好大，今天风好大，今天风好大，今天风好大，今天风好大，今天风好大
+        </div>
        </Fragment>
        )
     }

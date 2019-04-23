@@ -11,7 +11,7 @@ class Contracted extends Component {
     constructor() {
         super();
         this.state = {
-            cost: 6,
+            cost: 0,
             modal: false,
             checked: true,
             userInfo: {},

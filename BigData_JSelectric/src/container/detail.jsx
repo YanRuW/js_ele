@@ -3,6 +3,7 @@ import NavBar from "../component/navBar";
 import { Modal,Toast  } from 'antd-mobile';
 import { root,axios } from "../api";
 import { connect } from "react-redux";
+import action from "../store/action";
 const alert = Modal.alert;
  class Detail extends Component{
     constructor(){
@@ -46,32 +47,40 @@ const alert = Modal.alert;
     //解约
     handleCancle = async ()=>{
         // window.confirm("确定要解约吗");
-        let result = await axios({
-            method:"POST",
-            // headers: {
-            //     // "Content-Type": "application/json;charset=utf-8",
-            //     "Access-User-Token":this.props.token
-            // },
-            url:`${root}/contract/remove`
-        });
-        if(result.retCode == 0){
-            alert('解约', '你确定要解约吗?', [
-                { text: '取消'},
-                { text: '确定', onPress: () => {
-                    window.localStorage.removeItem("contract");
-                     Toast.success('解约成功', 1);
-                     setTimeout(()=>{
+        alert('解约', '你确定要解约吗?', [
+            { text: '取消'},
+            { text: '确定', onPress: async () => {
+                let result = await axios({
+                    method:"POST",
+                    // headers: {
+                    //     // "Content-Type": "application/json;charset=utf-8",
+                    //     "Access-User-Token":this.props.token
+                    // },
+                    url:`${root}/contract/remove`
+                    });
+                if(result.retCode == 0){
+                    Toast.success('解约成功', 1);
+                    this.props.handlePropsContract(false);//将store里的签约状态变为false
+                    setTimeout(()=>{
                         this.props.history.push("/")
                     },1000)
-                    }
-                 },
-            ])
-        }
+                }
+                }
+             },
+        ])
+        
         
     }
 }
 const mapStateToProps = (state)=>({
     userId:state.userInfo.userId,
-    token:state.userInfo.token
+    token:state.userInfo.token,
+    contract:state.userInfo.contract
 })
-export default connect(mapStateToProps)(Detail)
+const mapDispatchToProps = (dispatch)=>({
+    handlePropsContract(contract){
+        dispatch(action.userInfo.contractAction(contract));
+    }
+
+})
+export default connect(mapStateToProps,mapDispatchToProps)(Detail)
