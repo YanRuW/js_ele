@@ -1,54 +1,54 @@
 [
     {
        "city":"南京市",
-       "cityCode":"1" 
-    },
-    {
-        "city":"常州市",
-        "cityCode":"2" 
+       "cityCode":"320100000000" 
     },
     {
         "city":"无锡市",
-        "cityCode":"3" 
+        "cityCode":"320200000000" 
     },
     {
         "city":"徐州市",
-        "cityCode":"4" 
+        "cityCode":"320300000000" 
+    },
+    {
+        "city":"常州市",
+        "cityCode":"320400000000" 
     },
     {
         "city":"苏州市",
-        "cityCode":"5" 
+        "cityCode":"320500000000" 
     },
     {
         "city":"南通市",
-        "cityCode":"6" 
+        "cityCode":"320600000000" 
     },
     {
         "city":"连云港市",
-        "cityCode":"7" 
+        "cityCode":"320700000000" 
     },
     {
         "city":"淮安市",
-        "cityCode":"8" 
+        "cityCode":"320800000000" 
     },
     {
         "city":"盐城市",
-        "cityCode":"9" 
+        "cityCode":"320900000000" 
     },
     {
         "city":"扬州市",
-        "cityCode":"10" 
+        "cityCode":"321000000000" 
     },
     {
         "city":"镇江市",
-        "cityCode":"11" 
+        "cityCode":"321100000000" 
     },
     {
         "city":"泰州市",
-        "cityCode":"12" 
+        "cityCode":"321200000000" 
     },
     {
         "city":"宿迁市",
-        "cityCode":"13" 
+        "cityCode":"321300000000" 
     }
 ]
