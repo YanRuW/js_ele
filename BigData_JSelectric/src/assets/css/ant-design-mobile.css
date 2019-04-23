@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* ANT-DESIGN-MOBILE */
+.am-navbar .am-navbar-left{
+    padding-left: 0;
+    color: #333;
+}
+
+.am-navbar-light  .am-navbar-title {
+    font-size: .18rem;
+    color:#333;
+}
+.am-navbar .am-navbar-right {
+    color:#9d9d9d;
+    font-size:.16rem;
+}
+.am-checkbox-wrapper .am-checkbox .am-checkbox-inner {
+    width:.2rem;
+    height:.2rem;
+    margin-right:.05rem;
+}
+.am-checkbox-wrapper{
+    font-size:.15rem;
+    color:#b9b9b9;
+}
+.am-checkbox-wrapper a{
+    color:#74a1d5;
+}
+/* 成功按钮 */
+.am-modal-footer .am-modal-button-group-v{
+    height:.62rem;
+    padding-top: 0.05rem;
+    border-top:.01rem solid #f7f7f7;
+}
+.am-modal-footer .am-modal-button-group-v .am-modal-button {
+    margin:.1rem auto 0;
+    color: #fff;
+    font-size: .14rem;
+    height: .34rem;
+    line-height: .34rem;
+    width: 1.6rem;
+    border-radius: .17rem;
+    background-image: -webkit-linear-gradient(right, #81f1f9 0, #178be0 100%);
+	background-image: -moz-linear-gradient(right, #81f1f9 0, #178be0 100%);
+	background-image: -ms-linear-gradient(right, #81f1f9 0, #178be0 100%);
+	background-image: -o-linear-gradient(right, #81f1f9 0, #178be0 100%);
+	background-image: linear-gradient(to right, #81f1f9 0, #178be0 100%);
+}
+
+

@@ -1,0 +1,232 @@
+/* CSS Document */
+html, body, #root, .wrapper {
+    height: 100%;
+    overflow: hidden;
+}
+html {
+    font-size: 625%;
+}
+body {
+    color: #333;
+}
+header{
+    height:.8rem;
+    line-height: .8rem;
+    font-size:.17rem;
+}
+.banner{
+    height:1.7rem;
+}
+.eleCont{
+   color:#333
+}
+.contract{
+    padding:.1rem;
+    flex:1;
+    position: relative;
+}
+.form{
+    width:92%;
+    padding:.1rem 0;
+    background:#fff;
+    height:3.52rem;
+    position: absolute;
+    left:0;right:0;bottom:0;top:0.8rem;
+    margin:auto;
+}
+.form-con{
+    margin:.1rem auto 0;
+}
+.form .form-con label{
+    display: inline-block;
+    min-width:.65rem;
+    font-size:.16rem;
+}
+.form .form-con select{
+    width:2.12rem;
+    height:.35rem;
+    border-radius: .05rem;
+    border:.01rem solid #c8c8c8;
+    margin-left:.05rem;
+    padding-left:.1rem;
+    background:#fff;
+}
+.form .form-con input{
+    width:2rem;
+    height:.3rem;
+    border-radius: .05rem;
+    border:.01rem solid #c8c8c8;
+    margin-left:.05rem;
+    padding-left:.1rem;
+}
+.num{
+    padding-top:.1rem;
+}
+.num a{
+    color:#74a1d5;
+    text-decoration:underline;
+}
+.form .title{
+    font-size:.18rem;
+}
+.contract-btn{
+    margin-top:.5rem;
+}
+.count{
+    height:1rem;
+    line-height: 1rem;
+}
+.signed-con{
+    overflow-x:hidden;
+    padding-bottom:.5rem;
+    border-top:.01rem solid #f2f2f2;
+}
+.task{
+    height:3.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.task span:first-child{
+    font-size:.8rem;
+    color:#2282e0;
+}
+.task span:nth-child(2){
+    font-size:.16rem;
+    color:#000;
+}
+.taskBox{
+    flex: 1;
+    position: relative;
+}
+
+.task-con{   
+    position: absolute;
+    left:0;right:0;bottom: 0;top:0;
+    margin:auto;
+    width:3rem;
+    height:.8rem;
+    line-height: .8rem;
+    border-radius: .1rem;
+    /* border: .01rem solid #eee; */
+    box-shadow: .01rem .01rem  .2rem   #d0cdcd;
+    /* background:red; */
+} 
+.task-con div{
+    font-size:.16rem;
+    color:#969696;
+}
+.task-con div::after,.task-con div::before{
+    content: ''; 
+    position: absolute;
+    top: 50%; 
+    width: 12%; 
+    height: .02rem; 
+}
+.task3 div{
+    color:#00529d;
+}
+.task2 div{
+    color:#00529d;
+}
+.task4 div{
+    color:#f57723;
+}
+.task3 div:before { 
+    left: 10%;
+    background-image: -webkit-linear-gradient(right, #fff 0, #4d86ba 100%);
+	background-image: -moz-linear-gradient(right, #fff 0, #4d86ba 100%);
+	background-image: -ms-linear-gradient(right, #fff 0, #4d86ba 100%);
+	background-image: -o-linear-gradient(right, #fff 0, #4d86ba 100%);
+	background-image: linear-gradient(to right, #fff 0, #4d86ba 100%);
+    } 
+.task3 div:after { 
+    right: 10%; 
+    background-image: -webkit-linear-gradient(right, #4d86ba 0, #fff 100%);
+	background-image: -moz-linear-gradient(right, #4d86ba 0, #fff 100%);
+	background-image: -ms-linear-gradient(right, #4d86ba 0, #fff 100%);
+	background-image: -o-linear-gradient(right, #4d86ba 0, #fff 100%);
+	background-image: linear-gradient(to right, #4d86ba 0, #fff 100%);
+}
+.task4 div:before { 
+    left: 15%;
+    background-image: -webkit-linear-gradient(right, #fff 0, #f67d2c 100%);
+	background-image: -moz-linear-gradient(right, #fff 0, #f67d2c 100%);
+	background-image: -ms-linear-gradient(right, #fff 0, #f67d2c 100%);
+	background-image: -o-linear-gradient(right, #fff 0, #f67d2c 100%);
+	background-image: linear-gradient(to right, #fff 0, #f67d2c 100%);
+    } 
+.task4 div:after { 
+    right: 15%; 
+    background-image: -webkit-linear-gradient(right, #f67d2c 0, #fff 100%);
+	background-image: -moz-linear-gradient(right, #f67d2c 0, #fff 100%);
+	background-image: -ms-linear-gradient(right, #f67d2c 0, #fff 100%);
+	background-image: -o-linear-gradient(right, #f67d2c 0, #fff 100%);
+	background-image: linear-gradient(to right, #f67d2c 0, #fff 100%);
+}
+.diary{
+    padding:0 .23rem;
+}
+.diary-title{
+    border-top:.01rem solid #f2f2f2;
+    height:.5rem;
+    line-height: .5rem;
+    font-size:.15rem;
+    color:#9d9d9d;
+}
+.diary-con ul{
+    border-left:.01rem solid #eee;
+}
+.diary-con ul li{
+    padding-left:.1rem;
+    position: relative;
+    height:.32rem;
+    line-height: .32rem;
+}
+.diary-con ul li em{
+    position: absolute;
+    left:-0.045rem;
+    top:50%;
+    margin-top:-0.05rem;
+    display: inline-block;
+    width:.08rem;
+    height:.08rem;
+    border-radius: 100%;
+    background: #d8d8d8;
+}
+
+
+.cancel{
+    position: absolute;
+    bottom:.4rem;
+    left:50%;
+    margin-left:-.8rem;
+    color: #fff;
+    font-size: .16rem;
+    height: .38rem;
+    line-height: .38rem;
+    width: 1.8rem;
+    border:none;
+    border-radius: .19rem;
+    background-image: -webkit-linear-gradient(right, #faa369 0, #f75835 100%);
+	background-image: -moz-linear-gradient(right, #faa369 0, #f75835 100%);
+	background-image: -ms-linear-gradient(right, #faa369 0, #f75835 100%);
+	background-image: -o-linear-gradient(right, #faa369 0, #f75835 100%);
+	background-image: linear-gradient(to right, #faa369 0, #f75835 100%);
+}
+.month{
+    color:#969696;
+    font-size: .2rem;
+}
+.diary-con li{
+    color:#000;
+    font-size: .15rem;
+}
+.diary-con li .day{
+    font-size: .18rem;
+}
+.month span,.diary-con li .day span,.month span,.diary-con li .time{
+    font-size: .14rem;
+}
+.diary-con li .time{
+    color:#333;
+}
