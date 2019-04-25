@@ -31,8 +31,10 @@ class Contract extends Component {
             <Nav text="电力需求" history={this.props.history} closeWebView="1" />
             <div className="banner" style={{ background: `url(${rest}/assets/images/banner.png) 100% center no-repeat`, backgroundSize: "100% 100%" }}></div>
             <div className="contract">
-                <div className="eleCont" onClick={this.showModal("modal1")}>电力削峰是指......</div>
-                <div className="eleCont" onClick={this.showModal("modal2")}>签约后如何执行......</div>
+                <div>
+                    <div className="eleCont" onClick={this.showModal("modal1")}>电力削峰是指......</div>
+                    <div className="eleCont" onClick={this.showModal("modal2")}>签约后如何执行......</div>
+                </div>
                 <div className="form">
                     <div className="align-center title">注册签约</div>
                     <div className="form-con">
@@ -59,7 +61,7 @@ class Contract extends Component {
                     <div className="align-center num"><NavLink to="/elecNumber">如何查询户号</NavLink></div>
                     <div className="align-center contract-btn">
                         <div>
-                            <Checkbox checked={checked} onChange={this.handleCheck.bind(this)}>我已阅读并同意<NavLink to="/protocol">《海尔协议》</NavLink></Checkbox>
+                            <Checkbox checked={checked} onChange={this.handleCheck.bind(this)}>我已阅读并同意<NavLink to="/protocol">《海尔...协议》</NavLink></Checkbox>
                         </div>
                         <button className={(checked && elecNumber.trim() != "" ? true : false) ? "btn btn-able" : "btn btn-disabled"} disabled={!checked || elecNumber.trim() == "" ? true : false} onClick={this.handleContract.bind(this)}>签约</button>
                     </div>

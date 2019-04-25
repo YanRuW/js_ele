@@ -3,13 +3,13 @@ import React, { Component, Fragment } from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import action from "../store/action";
-import { root,axios } from "../api";
+import { root,axios,systemManagerRest } from "../api";
 import "../assets/css/reset.css";
 import "../assets/css/ant-design-mobile.css";
 import "../assets/css/common.css";
 import "../assets/css/index.css";
 import { LocaleProvider } from "antd-mobile";
-import UplusApi from '@uplus/uplus-api';
+import UplusApi from '@uplus/uplus-api';//引入U+app的类库
 
 class App extends Component {
     render() {
@@ -50,14 +50,26 @@ class App extends Component {
             instance.userModule.getUserInfo().then(function(data) {
                 if(data.retCode == "000000"){
                     if(data.retData){
-                        // 
-                        sessionStorage.setItem("Access-User-Token", data.retData.accessToken);
-                        that.props.handleTokenInfo(data.retData.accessToken);
-                         that.props.handleUserInfo(data.retData.userId);
+                        that.props.handleTokenInfo(data.retData.accessToken); //将token存入store
+                        that.props.handleUserInfo(data.retData.userId);//将用户id存入store
+                        that.handleToken(data.retData.accessToken);//token转换
                     }
                 }
             });
         });
+    }
+    //换取token
+    handleToken = async (token)=>{
+        // let result = await axios({
+        //     method:"POST",
+        //     url:`${systemManagerRest}/token/exchange`,
+        //     data:{
+        //         "accessToken":token,
+        //         "sysCode":"",
+        //         "username":""
+        //     }
+        // })
+        sessionStorage.setItem("Access-User-Token", token);
     }
 }
 const mapStateToProps = (state)=>({});

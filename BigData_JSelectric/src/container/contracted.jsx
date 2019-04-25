@@ -12,8 +12,8 @@ class Contracted extends Component {
         super();
         this.state = {
             cost: 0,
-            modal: false,
-            checked: true,
+            // modal: false,
+            // checked: true,
             userInfo: {},
             taskObj: {
                 // id: 0,
@@ -21,15 +21,15 @@ class Contracted extends Component {
                 // date: "",
                 // startTime: "",
                 // endTime: "",
-                // state: ""
+                // state: 11111
             },
             acts: [],
-            taskTate: {
+            dailyCont: {
                 "0": "未参与",
                 "1": "已签约",
                 "2": "未开始",
                 "3": "进行中",
-                "4": "中途打断，未完成任务",
+                "4": "中途打断,未完成任务",
                 "5": "完成任务"
             },
             taskCont: {
@@ -41,7 +41,7 @@ class Contracted extends Component {
         }
     }
     render() {
-        let { acts, taskTate, cost, taskObj, taskCont } = this.state;
+        let { acts, dailyCont, cost, taskObj, taskCont } = this.state;
         //用户id，token
         // console.log(this.props.userId,this.props.token)
         return <Fragment>
@@ -52,7 +52,8 @@ class Contracted extends Component {
                     <div className="count"><span>{cost} </span><span>次</span></div>
                     <div className="taskBox">
                         <div className={`task-con task${taskObj.state}`}>
-                            <div>{JSON.stringify(taskObj)!=="{}" ? taskCont[taskObj.state] + (taskObj.state == "2" ? taskObj.startTime + " 计划调峰" : "") : "今日暂无电量调峰任务"}</div>
+                     
+                            <div>{JSON.stringify(taskObj)!=="{}" ? taskCont[taskObj.state] + (taskObj.state == 2 ? taskObj.startTime + " 计划调峰" : "") : "暂无电量调峰任务"}</div>
                         </div>
                     </div>
 
@@ -66,9 +67,9 @@ class Contracted extends Component {
                                     {item.data.map((res, i) => {
                                         return <li key={i}>
                                             <em></em>
-                                            <span className="day">{moment(Date.parse(res.date)).format("DD")}<span>日</span></span>&nbsp;
-                                            <span className="time">{moment(Date.parse(res.date + " " + res.startTime)).format("HH:mm")}-{moment(Date.parse(res.date + " " + res.endTime)).format("HH:mm")}</span>&nbsp;&nbsp;
-                                            <span>{taskTate[res.state]}</span>
+                                            <span className="day">{moment(res.date).format("DD")}<span>日</span></span>&nbsp;
+                                            <span className="time">{moment(res.date + " " + res.startTime).format("HH:mm")}-{moment(res.date + " " + res.endTime).format("HH:mm")}</span>&nbsp;&nbsp;
+                                            <span>{dailyCont[res.state]}</span>
                                         </li>
                                     })}
                                 </ul></div>
@@ -111,7 +112,7 @@ class Contracted extends Component {
         //一分钟获取任务日志一次
         this.timer = setInterval(() => {
             this.handleStatistic();
-        }, 1000 * 60)
+        }, 1000 * 60);
     }
     //获取任务
     handleStatistic = async () => {
@@ -132,8 +133,8 @@ class Contracted extends Component {
             data.map((item, index) => {
                 if (item.date == nowDate && time < item.endTime) {
                     taskObj = item;
-                    taskObj.startTime = moment(Date.parse(taskObj.date + " " + taskObj.startTime)).format("HH:mm");
-                    taskObj.endTime = moment(Date.parse(taskObj.date + " " + taskObj.endTime)).format("HH:mm");
+                    taskObj.startTime = moment(taskObj.date + " " + taskObj.startTime).format("HH:mm");
+                    taskObj.endTime = moment(taskObj.date + " " + taskObj.endTime).format("HH:mm");
                     // 将未完成的任务从活动日记中删除
                     data.splice(index, 1);
                 }
@@ -148,7 +149,7 @@ class Contracted extends Component {
     handleData(cost, data) {
         let newArr = [], tempArr = [];
         data.map((item, index) => {
-            if (moment(Date.parse(item.date)).format("MM") == (data[index + 1] ? moment(Date.parse(data[index + 1].date)).format("MM") : "")) {
+            if (moment(item.date).format("MM") == (data[index + 1] ? moment(data[index + 1].date).format("MM") : "")) {
                 tempArr.push(item);
             } else {
                 tempArr.push(item);
@@ -158,7 +159,7 @@ class Contracted extends Component {
         })
         let newActs = [];
         newArr.map((item) => {
-            newActs.push({ month: moment(Date.parse(item[0].date)).format("M"), data: item })
+            newActs.push({ month: moment(item[0].date).format("M"), data: item })
         })
         this.setState({
             cost: cost,
@@ -166,7 +167,7 @@ class Contracted extends Component {
         })
     }
     componentWillUnmount() {
-        clearInterval(this.timer)
+        clearInterval(this.timer);
     }
     // handleDetail() {
     //     this.props.history.push("/detail")

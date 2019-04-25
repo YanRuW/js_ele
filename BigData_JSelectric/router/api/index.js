@@ -10,20 +10,28 @@ router.get("/task/statistic", (request, response) => {
         cost:9,
         acts:[
             {
-                id:13,
+                id:15,
+                userId:"12345678",
+                date:"2019-04-25",
+                startTime:"11:10:00",
+                endTime:"12:00:00",
+                state:0
+            },
+            {
+                id:14,
                 userId:"12345678",
                 date:"2019-04-23",
                 startTime:"15:10:00",
                 endTime:"15:40:00",
-                state:"0"
+                state:0
             },
             {
-                id:12,
+                id:13,
                 userId:"12345678",
                 date:"2019-04-22",
                 startTime:"15:10:00",
                 endTime:"15:40:00",
-                state:"4"
+                state:4
             },
             {
                 id:12,
@@ -31,47 +39,55 @@ router.get("/task/statistic", (request, response) => {
                 date:"2019-04-22",
                 startTime:"10:00:00",
                 endTime:"10:30:00",
-                state:"5"
+                state:5
             },
             {
-                id:10,
+                id:11,
                 userId:"12345678",
                 date:"2019-04-18",
                 startTime:"08:00:00",
                 endTime:"08:30:00",
-                state:"5"
+                state:5
             },
             {
-                id:9,
+                id:10,
                 userId:"12345678",
                 date:"2019-04-17",
                 startTime:"08:00:00",
                 endTime:"08:30:00",
-                state:"5"
+                state:5
             },
             {
-                id:8,
+                id:9,
                 userId:"12345678",
                 date:"2019-04-16",
                 startTime:"08:00:00",
                 endTime:"08:30:00",
-                state:"4"
+                state:4
             },
             {
-                id:6,
+                id:8,
                 userId:"12345678",
                 date:"2019-03-16",
                 startTime:"08:00:00",
                 endTime:"08:30:00",
-                state:"0"
+                state:0
             },
             {
-                id:5,
+                id:7,
                 userId:"12345678",
                 date:"2019-03-14",
                 startTime:"20:00:00",
                 endTime:"20:30:00",
-                state:"1"
+                state:0
+            },
+            {
+                id:6,
+                userId:"12345678",
+                date:"2019-02-14",
+                startTime:"10:00:00",
+                endTime:"10:20:00",
+                state:1
             }
         ]
     });

@@ -9,29 +9,6 @@
 .align-right {
 	text-align: right;
 }
-.btn {
-	display: inline-block;
-	width:2rem;
-	height:.5rem;
-	border-radius:.25rem;
-	border:none;
-	margin-top:.1rem;
-	font-size:.18rem;
-}
-.btn-able{
-	color: white;
-	background-image: -webkit-linear-gradient(right, #81f1f9 0, #178be0 100%);
-	background-image: -moz-linear-gradient(right, #81f1f9 0, #178be0 100%);
-	background-image: -ms-linear-gradient(right, #81f1f9 0, #178be0 100%);
-	background-image: -o-linear-gradient(right, #81f1f9 0, #178be0 100%);
-	background-image: linear-gradient(to right, #81f1f9 0, #178be0 100%);
-}
-.btn-disabled {
-	color: #969696;
-	background-color: #fff;
-	background-image: none;
-	border:.01rem solid #969696;
-}
 .container {
 	background-color: white;
 	padding: .1rem;
