@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+.align-left {
+	text-align: left;
+}
+.align-center {
+	text-align: center;
+}
+.align-right {
+	text-align: right;
+}
+.container {
+	background-color: white;
+	padding: .1rem;
+	height:100%;
+	position: relative;
+}
+.cutline {
+    margin: 10px 0;
+    border-top: 1px solid #DDD;
+}
+.display-block {
+	display: block;
+}
+.display-none {
+	display: none;
+}
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+.item {
+	margin-bottom: .1rem;
+}
+.overflow-auto {
+	position:absolute;
+    left:0;
+    top:0rem;
+    right:0;
+    bottom:0; 
+    overflow-y:auto;
+    overflow-x:hidden; 
+}
+.overflow-hidden {
+	overflow: hidden;
+}
+.wrapper {
+	position: relative;
+	background:#fff;
+	display: flex;
+	flex-direction: column;
+	/* padding: .1rem; */
+}
+h4 {
+	font-size: 14px;
+	line-height: 1.5;
+}
+h4::before {
+	content: ".";
+	display: inline-block;
+	width: 5px;
+	background-color: #2283E2;
+	margin-right: 10px;
+	border-radius: 4px;
+	color: #2283E2;
+}
+table {
+	width: 100%;
+}
+table tr th, table tr td {
+	text-align: center;
+}
