@@ -12,10 +12,10 @@ router.get("/task/statistic", (request, response) => {
             {
                 id:15,
                 userId:"12345678",
-                date:"2019-04-25",
-                startTime:"11:10:00",
-                endTime:"12:00:00",
-                state:0
+                date:"2019-04-28",
+                startTime:"10:20:00",
+                endTime:"18:50:00",
+                state:4
             },
             {
                 id:14,
@@ -87,6 +87,14 @@ router.get("/task/statistic", (request, response) => {
                 date:"2019-02-14",
                 startTime:"10:00:00",
                 endTime:"10:20:00",
+                state:5
+            },
+            {
+                id:5,
+                userId:"12345678",
+                date:"2019-01-02",
+                startTime:"19:10:00",
+                endTime:"20:20:00",
                 state:1
             }
         ]
@@ -115,7 +123,13 @@ router.post("/contract/remove", (request, response) => {
     })
 });
 router.get("/contract/getCity", async (request, response) => {
-    let data = await readFile(path.resolve(__dirname, "./city.json"), "utf-8");
-    response.send(data);
+    let data = await readFile(path.resolve(__dirname, "./country.json"), "utf-8");
+    let result = [];
+    for(var item in data){
+        if(data[item].Code == "320000"){//筛选出江苏省
+            result.push(data[item]);
+        }
+     }
+    response.send(result);
 });
 module.exports = router;

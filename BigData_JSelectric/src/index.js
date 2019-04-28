@@ -1,6 +1,6 @@
 //JavaScript Document
 import "@babel/polyfill";
-import React, {Component, Fragment} from "react";
+import React from "react";
 import ReactDOM, {render} from "react-dom";
 import {HashRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import {Provider} from "react-redux";
@@ -41,10 +41,7 @@ ReactDOM.render(<Provider store={store}>
     <App>
         <Switch>
             <Home1 exact path="/" component={Contract}/>
-            {/* <Route exact path="/" component={Contract}/> */}
             <Home2  path="/contracted"  component={Contracted} />
-            {/* <Route  path="/contracted" component={Contracted} /> */}
-            {/* <Route  path="/contract" component={Contract} /> */}
             <Route path="/detail" component={Detail} />
             <Route path="/elecNumber" component={ElecNumber} />
             <Route path="/protocol" component={Protocol} />

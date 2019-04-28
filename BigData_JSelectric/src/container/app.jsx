@@ -69,6 +69,9 @@ class App extends Component {
         //         "username":""
         //     }
         // })
+        // if(result.retCode==0){
+        //     console.log(result)
+        // }
         sessionStorage.setItem("Access-User-Token", token);
     }
 }

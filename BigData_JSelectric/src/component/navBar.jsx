@@ -15,12 +15,12 @@ export default class Nav extends Component{
        )
     }
     handleClick(){
-      if(this.props.closeWebView=="1"){
+      if(this.props.closeWebView=="1"){ //关闭webView
             const instance = new UplusApi();
             instance.initDeviceReady().then(function() {
                 instance.closeH5ContainerView();
             });
-      }else{
+      }else{   //回到上一步
           this.props.history.goBack();
       }
     }
